@@ -51,3 +51,6 @@ class BasePage():
     def open_basket(self):
         but_click_basket = self.browser.find_element(*OpenBasket.BASKET)
         but_click_basket.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "Значок пользователя не отображается, возможно, это неавторизованный пользователь"
